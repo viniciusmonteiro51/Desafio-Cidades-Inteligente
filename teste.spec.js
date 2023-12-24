@@ -38,7 +38,7 @@ describe('Testes CRUD do sistema de Gerenciamento de Usuários, Cenários de suc
 
 }); 
 
-describe('Testes CRUD do sistema de Gerenciamento de Usuários, Cenários de sucesso', () => {
+describe('Testes CRUD do sistema de Gerenciamento de Usuários, Cenários de insucesso', () => {
 
     gerenciamentoUsuarios
 
@@ -66,17 +66,17 @@ describe('Testes CRUD do sistema de Gerenciamento de Usuários, Cenários de suc
         expect(cadastro).toEqual("Houve um erro ao tentar cadastrar o usuário, tente novamente")
       })
     
-      it('Deve atualizar algum dado do usuário cadastrado acima, cenário de sucesso', () => {
+      it('Deve tentar atualizar algum dado do usuário cadastrado acima, cenário de insucesso', () => {
         const atualizar = administradorErro.atualizarUsuario()
         expect(atualizar).toEqual("Usuário não encontrado");
       })
     
-      it('Deve listar todos os usuários cadastrados, cenário de sucesso', () => {
+      it('Deve tentar listar todos os usuários cadastrados, cenário de insucesso', () => {
         const listar = administradorErro.listarUsuarios()
         expect(listar).toEqual('Não há usuários cadastrados');
       })
     
-      it('Deve deletar o usuário cadastrado acima, cenário de sucesso', () => {
+      it('Deve tentar deletar o usuário cadastrado acima, cenário de insucesso', () => {
         const deletar = administradorErro.deletarUsuario(1)
         expect(deletar).toEqual('Usuário não encontrado');
       })
