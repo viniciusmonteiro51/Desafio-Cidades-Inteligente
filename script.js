@@ -181,7 +181,6 @@ class Usuario {
     Login(email, senha) {
         const login = gerenciamentoUsuarios.find((usuario) => usuario.email);
         
-
         if(login && login.senha) {
             login.login = new Date();
            

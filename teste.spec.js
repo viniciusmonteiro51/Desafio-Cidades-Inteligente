@@ -1,5 +1,6 @@
 import { Usuario, gerenciamentoUsuarios, validarEmail, validarSenha } from './script.js';
 
+
 describe('Testes CRUD do sistema de Gerenciamento de Usuários, Cenários de sucesso', () => {
     gerenciamentoUsuarios
 
