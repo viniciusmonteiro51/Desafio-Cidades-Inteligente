@@ -2,15 +2,12 @@
 let gerenciamentoUsuarios = [];
 
 //Função para validar E-mail
-
 function validarEmail(email) {
     let emailValido = /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
     return emailValido.test(email);
 }
 
-
 //Função para validar Senha
-
 function validarSenha(senha) {
     let senhaValida = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
     
@@ -19,8 +16,6 @@ function validarSenha(senha) {
     } 
     return 'Senha válida' //Return utilizado para teste
 }
-
-
 
 class Usuario {
     constructor(nome, email, senha, permissao_admin = []) {
@@ -76,7 +71,6 @@ class Usuario {
 
 
     //Método para cadastrar usuário
-
     cadastrarUsuario(nome, email, senha, permissao_admin) {
         if (this.ativo === true) {
 
@@ -97,7 +91,6 @@ class Usuario {
     }
 
     //Método para listar usuários
-
     listarUsuarios() {
         if(this.ativo === true) {
         console.log("Esses são os seguintes usuários cadastrados:");
@@ -114,7 +107,6 @@ class Usuario {
     }
 
     //Método para deletar usuário
-
     deletarUsuario(id) {
         const usuarioDeletado = gerenciamentoUsuarios.find((usuario) => {
             return usuario.id === id;
@@ -135,7 +127,6 @@ class Usuario {
     }
 
     //Método para atualizar usuário com base no ID
-
     atualizarUsuario(id, nomeAtualizado, emailAtualizado, senhaAtualizada, novoAtivo, novoPermissao_admin) {
         const usuarioAtualizado = gerenciamentoUsuarios.find(
             usuario => usuario.id === id);
@@ -170,7 +161,6 @@ class Usuario {
     }
 
     //Método para atualizar status de atividade
-
     atualizarStatus(id, alterarAtivo) {
         const statusAtivo = gerenciamentoUsuarios.find(
             usuario => usuario.id === id);
@@ -187,7 +177,7 @@ class Usuario {
             }
     }
 
-
+    //Método de Login
     Login(email, senha) {
         const login = gerenciamentoUsuarios.find((usuario) => usuario.email);
         
@@ -203,7 +193,7 @@ class Usuario {
         }
     }
 
-
+    //Método de Logout
     Logout(id) {
         const logout = gerenciamentoUsuarios.find((usuario) => usuario.id === id);
 
